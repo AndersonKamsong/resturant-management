@@ -42,7 +42,7 @@ public class RegisterServlet extends HttpServlet {
         user.setFullName(request.getParameter("fullName"));
         user.setEmail(request.getParameter("email"));
         user.setPhone(request.getParameter("phone"));
-        
+
         if (userService.registerUser(user)) {
             request.setAttribute("success", "Registration successful! Please login.");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
